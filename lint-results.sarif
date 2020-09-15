@@ -116,11 +116,6 @@
                     ]
                 }
             },
-            "originalUriBaseIds": {
-                "%SRCROOT%": {
-                    "uri": "file:///home/tnorbye/dev/github/tnorbye/android-custom-lint-rules/android-studio-4/library/"
-                }
-            },
             "results": [
                 {
                     "ruleId": "OldTargetApi",

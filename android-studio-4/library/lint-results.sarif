@@ -279,7 +279,7 @@
                                             "deletedRegion": {
                                                 "startLine": 3,
                                                 "startColumn": 31,
-                                                "charOffset": 89,
+                                                "charOffset": 89
                                             },
                                             "insertedContent": {
                                                 "text": " translatable=\"false\"\n"

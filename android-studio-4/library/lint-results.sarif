@@ -1,0 +1,437 @@
+{
+    "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+    "version" : "2.1.0",
+    "runs" : [
+        {
+            "tool": {
+                "driver": {
+                    "name": "Android Lint",
+                    "fullName": "Android Lint (in gradle)",
+                    "version": "4.2.0-dev",
+                    "organization": "Google",
+                    "informationUri": "https://developer.android.com/studio/write/lint",
+                    "fullDescription": {
+                        "text": "Static analysis originally for Android source code but now performing general analysis"
+                    },
+                    "language": "en-US",
+                    "rules": [
+                        {
+                            "id": "ExtraTranslation",
+                            "shortDescription": {
+                                "text": "Extra translation"
+                            },
+                            "fullDescription": {
+                                "text": "If a string appears in a specific language translation file, but there is no corresponding string in the default locale, then this string is probably unused. (It's technically possible that your application is only intended to run in a specific locale, but it's still a good idea to provide a fallback.)\n\nNote that these strings can lead to crashes if the string is looked up on any locale not providing a translation, so it's important to clean them up."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error",
+                                "rank": 50
+                            },
+                            "properties": {
+                                "tags": [
+                                    "Messages",
+                                    "Correctness"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MissingTranslation",
+                            "shortDescription": {
+                                "text": "Incomplete translation"
+                            },
+                            "fullDescription": {
+                                "text": "If an application has more than one locale, then all the strings declared in one language should also be translated in all other languages.\n\nIf the string should not be translated, you can add the attribute translatable=\"false\" on the <string> element, or you can define all your non-translatable strings in a resource file called donottranslate.xml. Or, you can ignore the issue with a tools:ignore=\"MissingTranslation\" attribute.\n\nYou can tell lint (and other tools) which language is the default language in your res/values/ folder by specifying tools:locale=\"languageCode\" for the root <resources> element in your resource file. (The tools prefix refers to the namespace declaration http://schemas.android.com/tools.)",
+                                "markdown": "If an application has more than one locale, then all the strings declared in one language should also be translated in all other languages.\n\nIf the string should **not** be translated, you can add the attribute `translatable=\"false\"` on the `<string>` element, or you can define all your non-translatable strings in a resource file called `donottranslate.xml`. Or, you can ignore the issue with a `tools:ignore=\"MissingTranslation\"` attribute.\n\nYou can tell lint (and other tools) which language is the default language in your `res/values/` folder by specifying `tools:locale=\"languageCode\"` for the root `<resources>` element in your resource file. (The `tools` prefix refers to the namespace declaration `http://schemas.android.com/tools`.)"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error",
+                                "rank": 30
+                            },
+                            "properties": {
+                                "tags": [
+                                    "Messages",
+                                    "Correctness"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "OldTargetApi",
+                            "shortDescription": {
+                                "text": "Target SDK attribute is not targeting latest version"
+                            },
+                            "fullDescription": {
+                                "text": "When your application runs on a version of Android that is more recent than your targetSdkVersion specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the targetSdkVersion is less than 14, your app may get an option button in the UI.\n\nTo fix this issue, set the targetSdkVersion to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: https://developer.android.com/reference/android/os/Build.VERSION_CODES.html as well as follow this guide:\nhttps://developer.android.com/distribute/best-practices/develop/target-sdk.html",
+                                "markdown": "When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.\n\nTo fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: https://developer.android.com/reference/android/os/Build.VERSION_CODES.html as well as follow this guide:\nhttps://developer.android.com/distribute/best-practices/develop/target-sdk.html"
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning",
+                                "rank": 50
+                            },
+                            "properties": {
+                                "tags": [
+                                    "Correctness"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "SdCardPath",
+                            "shortDescription": {
+                                "text": "Hardcoded reference to /sdcard",
+                                "markdown": "Hardcoded reference to `/sdcard`"
+                            },
+                            "fullDescription": {
+                                "text": "Your code should not reference the /sdcard path directly; instead use Environment.getExternalStorageDirectory().getPath().\n\nSimilarly, do not reference the /data/data/ path directly; it can vary in multi-user scenarios. Instead, use Context.getFilesDir().getPath().",
+                                "markdown": "Your code should not reference the `/sdcard` path directly; instead use `Environment.getExternalStorageDirectory().getPath()`.\n\nSimilarly, do not reference the `/data/data/` path directly; it can vary in multi-user scenarios. Instead, use `Context.getFilesDir().getPath()`."
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning",
+                                "rank": 50
+                            },
+                            "properties": {
+                                "tags": [
+                                    "Correctness"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "UseValueOf",
+                            "shortDescription": {
+                                "text": "Should use valueOf instead of new",
+                                "markdown": "Should use `valueOf` instead of `new`"
+                            },
+                            "fullDescription": {
+                                "text": "You should not call the constructor for wrapper classes directly, such as`new Integer(42)`. Instead, call the valueOf factory method, such as Integer.valueOf(42). This will typically use less memory because common integers such as 0 and 1 will share a single instance.",
+                                "markdown": "You should not call the constructor for wrapper classes directly, such as`new Integer(42)`. Instead, call the `valueOf` factory method, such as `Integer.valueOf(42)`. This will typically use less memory because common integers such as 0 and 1 will share a single instance."
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning",
+                                "rank": 70
+                            },
+                            "properties": {
+                                "tags": [
+                                    "Performance"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "originalUriBaseIds": {
+                "%SRCROOT%": {
+                    "uri": "file:///home/tnorbye/dev/github/tnorbye/android-custom-lint-rules/android-studio-4/library/"
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "OldTargetApi",
+                    "ruleIndex": 2,
+                    "message": {
+                        "text": "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "build.gradle"
+                                },
+                                "region": {
+                                    "startLine": 7,
+                                    "startColumn": 26,
+                                    "endLine": 7,
+                                    "endColumn": 28,
+                                    "charOffset": 142,
+                                    "charLength": 2,
+                                    "snippet": {
+                                        "text": "29"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 5,
+                                    "endLine": 10,
+                                    "snippet": {
+                                        "text": "    defaultConfig {\n        minSdkVersion 15\n        targetSdkVersion 29\n    }"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Update targetSdkVersion to 30"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "build.gradle"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 7,
+                                                "startColumn": 27,
+                                                "charOffset": 142,
+                                                "endLine": 7,
+                                                "endColumn": 1,
+                                                "charLength": 2
+                                            },
+                                            "insertedContent": {
+                                                "text": "30\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "e51fa133e6c48567ef77c98605f9477b3e00f976ef6355d8d815b8724c273e94"
+                    }
+                },
+                {
+                    "ruleId": "SdCardPath",
+                    "ruleIndex": 3,
+                    "message": {
+                        "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
+                        "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 5,
+                                    "startColumn": 20,
+                                    "endLine": 5,
+                                    "endColumn": 34,
+                                    "charOffset": 97,
+                                    "charLength": 14,
+                                    "snippet": {
+                                        "text": "\"/sdcard/path\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 3,
+                                    "endLine": 8,
+                                    "snippet": {
+                                        "text": "public class Test {\n    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
+                    }
+                },
+                {
+                    "ruleId": "MissingTranslation",
+                    "ruleIndex": 1,
+                    "message": {
+                        "text": "\"my_string2\" is not translated in \"nb\" (Norwegian Bokmål)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/res/values/strings.xml"
+                                },
+                                "region": {
+                                    "startLine": 3,
+                                    "startColumn": 13,
+                                    "endLine": 3,
+                                    "endColumn": 30,
+                                    "charOffset": 72,
+                                    "charLength": 17,
+                                    "snippet": {
+                                        "text": "name=\"my_string2\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 1,
+                                    "endLine": 6,
+                                    "snippet": {
+                                        "text": "<resources>\n    <string name=\"my_string\">My String</string>\n    <string name=\"my_string2\">My String2</string>\n</resources>"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Mark non-translatable"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "src/main/res/values/strings.xml"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 3,
+                                                "startColumn": 31,
+                                                "charOffset": 89,
+                                            },
+                                            "insertedContent": {
+                                                "text": " translatable=\"false\"\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "8a36dad4ceb3ec62a9d8f52af76390adf6118a234e47fd77236c563cbcc8fa8e"
+                    }
+                },
+                {
+                    "ruleId": "ExtraTranslation",
+                    "ruleIndex": 0,
+                    "message": {
+                        "text": "\"my_string3\" is translated here but not found in default locale"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/res/values-nb/strings.xml"
+                                },
+                                "region": {
+                                    "startLine": 3,
+                                    "startColumn": 13,
+                                    "endLine": 3,
+                                    "endColumn": 30,
+                                    "charOffset": 72,
+                                    "charLength": 17,
+                                    "snippet": {
+                                        "text": "name=\"my_string3\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 1,
+                                    "endLine": 6,
+                                    "snippet": {
+                                        "text": "<resources>\n    <string name=\"my_string\">My String</string>\n    <string name=\"my_string3\">My String 3</string>\n</resources>"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Remove translation"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "src/main/res/values-nb/strings.xml"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 3,
+                                                "startColumn": 2,
+                                                "charOffset": 60,
+                                                "endLine": 4,
+                                                "endColumn": 2,
+                                                "charLength": 51
+                                            },
+                                            "insertedContent": {
+                                                "text": "\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "04c6e5af2dfde7ce7d6bcf9117dd2559e38fe58b42d82985bde8ede9ca279845"
+                    }
+                },
+                {
+                    "ruleId": "UseValueOf",
+                    "ruleIndex": 4,
+                    "message": {
+                        "text": "Use Integer.valueOf(42) instead",
+                        "markdown": "Use `Integer.valueOf(42)` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 6,
+                                    "startColumn": 14,
+                                    "endLine": 6,
+                                    "endColumn": 29,
+                                    "charOffset": 141,
+                                    "charLength": 15,
+                                    "snippet": {
+                                        "text": "new Integer(42)"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 4,
+                                    "endLine": 9,
+                                    "snippet": {
+                                        "text": "    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);\n    }"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Replace with valueOf()"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 6,
+                                                "startColumn": 15,
+                                                "charOffset": 141,
+                                                "endLine": 6,
+                                                "endColumn": 26,
+                                                "charLength": 11
+                                            },
+                                            "insertedContent": {
+                                                "text": "Integer.valueOf\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "68ab25cd22f760eda046046d2d9d1703fabf754c1678d4603af7cf8d5a8738da"
+                    }
+                }
+            ]
+        }
+    ]
+}

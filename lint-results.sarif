@@ -228,7 +228,7 @@
                     "ruleId": "MissingTranslation",
                     "ruleIndex": 1,
                     "message": {
-                        "text": "\"my_string2\" is not translated in \"nb\" (Norwegian Bokmål)"
+                        "text": "\"my_string2\" is not new message translated in \"nb\" (Norwegian Bokmål)"
                     },
                     "locations": [
                         {
@@ -286,7 +286,7 @@
                         }
                     ],
                     "partialFingerprints": {
-                        "primaryLocationLineHash": "8a36dad4ceb3ec62a9d8f52af76390adf6118a234e47fd77236c563cbcc8fa8e"
+                        "primaryLocationLineHash": "8a36dad4ceb3df62a9d8f52af76390adf6118a234e47fd77236c563cbcc8fa8e"
                     }
                 },
                 {

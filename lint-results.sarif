@@ -21,7 +21,7 @@
                                 "text": "Extra translation"
                             },
                             "fullDescription": {
-                                "text": "If a String appears in a specific language translation file, but there is no corresponding string in the default locale, then this string is probably unused. (It's technically possible that your application is only intended to run in a specific locale, but it's still a good idea to provide a fallback.)\n\nNote that these strings can lead to crashes if the string is looked up on any locale not providing a translation, so it's important to clean them up."
+                                "text": "If a string appears in a specific language translation file, but there is no corresponding string in the default locale, then this string is probably unused. (It's technically possible that your application is only intended to run in a specific locale, but it's still a good idea to provide a fallback.)\n\nNote that these strings can lead to crashes if the string is looked up on any locale not providing a translation, so it's important to clean them up."
                             },
                             "defaultConfiguration": {
                                 "level": "error",
@@ -116,6 +116,11 @@
                     ]
                 }
             },
+            "originalUriBaseIds": {
+                "%SRCROOT%": {
+                    "uri": "file:///home/tnorbye/dev/github/tnorbye/new/android-custom-lint-rules/library/"
+                }
+            },
             "results": [
                 {
                     "ruleId": "OldTargetApi",
@@ -128,7 +133,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "android-studio-4/library/build.gradle"
+                                    "uri": "build.gradle"
                                 },
                                 "region": {
                                     "startLine": 7,
@@ -180,8 +185,11 @@
                                 }
                             ]
                         }
-                    ]
-                    },
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "e51fa133e6c48567ef77c98605f9477b3e00f976ef6355d8d815b8724c273e94"
+                    }
+                },
                 {
                     "ruleId": "SdCardPath",
                     "ruleIndex": 3,
@@ -211,18 +219,99 @@
                                     "startLine": 3,
                                     "endLine": 8,
                                     "snippet": {
-                                        "text": "public class Test {\n    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);"
+                                        "text": "public class Test {\n    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path\"; // not allowed"
                                     }
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
+                    }
+                },
+                {
+                    "ruleId": "SdCardPath",
+                    "ruleIndex": 3,
+                    "message": {
+                        "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
+                        "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 6,
+                                    "startColumn": 20,
+                                    "endLine": 6,
+                                    "endColumn": 34,
+                                    "charOffset": 147,
+                                    "charLength": 14,
+                                    "snippet": {
+                                        "text": "\"/sdcard/path\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 4,
+                                    "endLine": 9,
+                                    "snippet": {
+                                        "text": "    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path\"; // not allowed\n        String u = \"/sdcard/path\"; // not allowed"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
+                    }
+                },
+                {
+                    "ruleId": "SdCardPath",
+                    "ruleIndex": 3,
+                    "message": {
+                        "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
+                        "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 7,
+                                    "startColumn": 20,
+                                    "endLine": 7,
+                                    "endColumn": 34,
+                                    "charOffset": 197,
+                                    "charLength": 14,
+                                    "snippet": {
+                                        "text": "\"/sdcard/path\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 5,
+                                    "endLine": 10,
+                                    "snippet": {
+                                        "text": "        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path\"; // not allowed\n        String u = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
+                    }
                 },
                 {
                     "ruleId": "MissingTranslation",
                     "ruleIndex": 1,
                     "message": {
-                        "text": "\"my_string2\" is not new message translated in \"nb\" (Norwegian Bokmål)"
+                        "text": "\"my_string2\" is not translated in \"nb\" (Norwegian Bokmål)"
                     },
                     "locations": [
                         {
@@ -268,7 +357,7 @@
                                             "deletedRegion": {
                                                 "startLine": 3,
                                                 "startColumn": 31,
-                                                "charOffset": 89
+                                                "charOffset": 89,
                                             },
                                             "insertedContent": {
                                                 "text": " translatable=\"false\"\n"
@@ -278,7 +367,10 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "8a36dad4ceb3ec62a9d8f52af76390adf6118a234e47fd77236c563cbcc8fa8e"
+                    }
                 },
                 {
                     "ruleId": "ExtraTranslation",
@@ -363,21 +455,21 @@
                                     "uri": "src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
-                                    "startLine": 6,
+                                    "startLine": 8,
                                     "startColumn": 14,
-                                    "endLine": 6,
+                                    "endLine": 8,
                                     "endColumn": 29,
-                                    "charOffset": 141,
+                                    "charOffset": 241,
                                     "charLength": 15,
                                     "snippet": {
                                         "text": "new Integer(42)"
                                     }
                                 },
                                 "contextRegion": {
-                                    "startLine": 4,
-                                    "endLine": 9,
+                                    "startLine": 6,
+                                    "endLine": 11,
                                     "snippet": {
-                                        "text": "    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);\n    }"
+                                        "text": "        String t = \"/sdcard/path\"; // not allowed\n        String u = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);\n    }"
                                     }
                                 }
                             }
@@ -397,10 +489,10 @@
                                     "replacements": [
                                         {
                                             "deletedRegion": {
-                                                "startLine": 6,
+                                                "startLine": 8,
                                                 "startColumn": 15,
-                                                "charOffset": 141,
-                                                "endLine": 6,
+                                                "charOffset": 241,
+                                                "endLine": 8,
                                                 "endColumn": 26,
                                                 "charLength": 11
                                             },

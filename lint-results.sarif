@@ -137,7 +137,7 @@
             },
             "originalUriBaseIds": {
                 "%SRCROOT%": {
-                    "uri": "file:///home/tnorbye/dev/github/tnorbye/new/android-custom-lint-rules/library/"
+                    "uri": "file:///home/tnorbye/dev/github/tnorbye/new/android-custom-lint-rules/"
                 }
             },
             "results": [
@@ -152,7 +152,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "build.gradle"
+                                    "uri": "library/build.gradle"
                                 },
                                 "region": {
                                     "startLine": 7,
@@ -184,7 +184,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "build.gradle"
+                                        "uri": "library/build.gradle"
                                     },
                                     "replacements": [
                                         {
@@ -221,7 +221,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
                                     "startLine": 5,
@@ -260,7 +260,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
                                     "startLine": 6,
@@ -299,7 +299,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
                                     "startLine": 7,
@@ -338,7 +338,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
                                     "startLine": 8,
@@ -376,7 +376,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "build.gradle"
+                                    "uri": "library/build.gradle"
                                 },
                                 "region": {
                                     "startLine": 6,
@@ -408,7 +408,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "build.gradle"
+                                        "uri": "library/build.gradle"
                                     },
                                     "replacements": [
                                         {
@@ -444,7 +444,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/res/values/strings.xml"
+                                    "uri": "library/src/main/res/values/strings.xml"
                                 },
                                 "region": {
                                     "startLine": 3,
@@ -476,7 +476,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "src/main/res/values/strings.xml"
+                                        "uri": "library/src/main/res/values/strings.xml"
                                     },
                                     "replacements": [
                                         {
@@ -509,7 +509,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/res/values-nb/strings.xml"
+                                    "uri": "library/src/main/res/values-nb/strings.xml"
                                 },
                                 "region": {
                                     "startLine": 3,
@@ -541,7 +541,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "src/main/res/values-nb/strings.xml"
+                                        "uri": "library/src/main/res/values-nb/strings.xml"
                                     },
                                     "replacements": [
                                         {
@@ -577,7 +577,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/res/values-nb/strings.xml"
+                                    "uri": "library/src/main/res/values-nb/strings.xml"
                                 },
                                 "region": {
                                     "startLine": 4,
@@ -609,7 +609,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "src/main/res/values-nb/strings.xml"
+                                        "uri": "library/src/main/res/values-nb/strings.xml"
                                     },
                                     "replacements": [
                                         {
@@ -646,7 +646,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
                                     "startLine": 9,
@@ -678,7 +678,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                        "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                     },
                                     "replacements": [
                                         {
@@ -715,7 +715,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
                                     "startLine": 10,
@@ -747,7 +747,7 @@
                                 {
                                     "artifactLocation": {
                                         "uriBaseId": "%SRCROOT%",
-                                        "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                        "uri": "library/src/main/java/com/android/tools/demo/Test.java"
                                     },
                                     "replacements": [
                                         {

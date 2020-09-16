@@ -128,7 +128,7 @@
                             "physicalLocation": {
                                 "artifactLocation": {
                                     "uriBaseId": "%SRCROOT%",
-                                    "uri": "build.gradle"
+                                    "uri": "android-studio-4/library/build.gradle"
                                 },
                                 "region": {
                                     "startLine": 7,

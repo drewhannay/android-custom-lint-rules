@@ -19,3 +19,4 @@ jobs:
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: lint-results.sarif
+        checkout_path: android-studio-4/library

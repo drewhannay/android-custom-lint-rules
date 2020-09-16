@@ -116,6 +116,11 @@
                     ]
                 }
             },
+            "originalUriBaseIds": {
+                "%SRCROOT%": {
+                    "uri": "android-studio-4/library"
+                }
+            },
             "results": [
                 {
                     "ruleId": "OldTargetApi",

@@ -35,25 +35,6 @@
                             }
                         },
                         {
-                            "id": "MinSdkTooLow",
-                            "shortDescription": {
-                                "text": "API Version Too Low"
-                            },
-                            "fullDescription": {
-                                "text": "The value of the minSdkVersion property is too low and can be incremented without noticeably reducing the number of supported devices.",
-                                "markdown": "The value of the `minSdkVersion` property is too low and can be incremented without noticeably reducing the number of supported devices."
-                            },
-                            "defaultConfiguration": {
-                                "level": "warning",
-                                "rank": 70
-                            },
-                            "properties": {
-                                "tags": [
-                                    "Correctness"
-                                ]
-                            }
-                        },
-                        {
                             "id": "MissingTranslation",
                             "shortDescription": {
                                 "text": "Incomplete translation"
@@ -142,8 +123,7 @@
             },
             "results": [
                 {
-                    "ruleId": "OldTargetApi",
-                    "ruleIndex": 3,
+                    "ruleIndex": 2,
                     "message": {
                         "text": "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
                     },
@@ -205,13 +185,10 @@
                             ]
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "e51fa133e6c48567ef77c98605f9477b3e00f976ef6355d8d815b8724c273e94"
-                    }
+                    "ruleId": "OldTargetApi"
                 },
                 {
-                    "ruleId": "SdCardPath",
-                    "ruleIndex": 4,
+                    "ruleIndex": 3,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
                         "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
@@ -244,13 +221,10 @@
                             }
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
-                    }
+                    "ruleId": "SdCardPath"
                 },
                 {
-                    "ruleId": "SdCardPath",
-                    "ruleIndex": 4,
+                    "ruleIndex": 3,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
                         "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
@@ -283,13 +257,10 @@
                             }
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "6abfc615234638e7731e0348a2561dd69e8a3db32ec1b021b471a73183d52f95"
-                    }
+                    "ruleId": "SdCardPath"
                 },
                 {
-                    "ruleId": "SdCardPath",
-                    "ruleIndex": 4,
+                    "ruleIndex": 3,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
                         "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
@@ -322,13 +293,10 @@
                             }
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "d4a9a367620fa2b2b817791f64833555722b000e7ea0cc19502805384590abf5"
-                    }
+                    "ruleId": "SdCardPath"
                 },
                 {
-                    "ruleId": "SdCardPath",
-                    "ruleIndex": 4,
+                    "ruleIndex": 3,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
                         "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
@@ -361,81 +329,10 @@
                             }
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "60ff2989bf91907351317083263d53445476e4cdffa8cd4b2a6f08afb34f5126"
-                    }
+                    "ruleId": "SdCardPath"
                 },
                 {
-                    "ruleId": "MinSdkTooLow",
                     "ruleIndex": 1,
-                    "message": {
-                        "text": "The value of minSdkVersion is too low. It can be incremented without noticeably reducing the number of supported devices."
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "%SRCROOT%",
-                                    "uri": "build.gradle"
-                                },
-                                "region": {
-                                    "startLine": 6,
-                                    "startColumn": 9,
-                                    "endLine": 6,
-                                    "endColumn": 25,
-                                    "charOffset": 100,
-                                    "charLength": 16,
-                                    "snippet": {
-                                        "text": "minSdkVersion 15"
-                                    }
-                                },
-                                "contextRegion": {
-                                    "startLine": 4,
-                                    "endLine": 9,
-                                    "snippet": {
-                                        "text": "    compileSdkVersion 29\n    defaultConfig {\n        minSdkVersion 15\n        targetSdkVersion 29"
-                                    }
-                                }
-                            }
-                        }
-                    ],
-                    "fixes": [
-                        {
-                            "description": {
-                                "text": "Update minSdkVersion to 16"
-                            },
-                            "artifactChanges": [
-                                {
-                                    "artifactLocation": {
-                                        "uriBaseId": "%SRCROOT%",
-                                        "uri": "build.gradle"
-                                    },
-                                    "replacements": [
-                                        {
-                                            "deletedRegion": {
-                                                "startLine": 6,
-                                                "startColumn": 24,
-                                                "charOffset": 114,
-                                                "endLine": 6,
-                                                "endColumn": 1,
-                                                "charLength": 2
-                                            },
-                                            "insertedContent": {
-                                                "text": "16\n"
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "fa924b88f48cfc1689c56c8f17ee0c86f73a536fdddd6f83de6e1e5d80a2ce8e"
-                    }
-                },
-                {
-                    "ruleId": "MissingTranslation",
-                    "ruleIndex": 2,
                     "message": {
                         "text": "\"my_string2\" is not translated in \"nb\" (Norwegian Bokmål)"
                     },
@@ -483,7 +380,7 @@
                                             "deletedRegion": {
                                                 "startLine": 3,
                                                 "startColumn": 31,
-                                                "charOffset": 89
+                                                "charOffset": 89,
                                             },
                                             "insertedContent": {
                                                 "text": " translatable=\"false\"\n"
@@ -494,12 +391,9 @@
                             ]
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "8a36dad4ceb3ec62a9d8f52af76390adf6118a234e47fd77236c563cbcc8fa8e"
-                    }
+                    "ruleId": "MissingTranslation"
                 },
                 {
-                    "ruleId": "ExtraTranslation",
                     "ruleIndex": 0,
                     "message": {
                         "text": "\"my_string3\" is translated here but not found in default locale"
@@ -562,13 +456,10 @@
                             ]
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "04c6e5af2dfde7ce7d6bcf9117dd2559e38fe58b42d82985bde8ede9ca279845"
-                    }
+                    "ruleId": "ExtraTranslation"
                 },
                 {
-                    "ruleId": "UseValueOf",
-                    "ruleIndex": 5,
+                    "ruleIndex": 4,
                     "message": {
                         "text": "Use Integer.valueOf(42) instead",
                         "markdown": "Use `Integer.valueOf(42)` instead"
@@ -631,13 +522,10 @@
                             ]
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "68ab25cd22f760eda046046d2d9d1703fabf754c1678d4603af7cf8d5a8738da"
-                    }
+                    "ruleId": "UseValueOf"
                 },
                 {
-                    "ruleId": "UseValueOf",
-                    "ruleIndex": 5,
+                    "ruleIndex": 4,
                     "message": {
                         "text": "Use Integer.valueOf(43) instead",
                         "markdown": "Use `Integer.valueOf(43)` instead"
@@ -700,9 +588,7 @@
                             ]
                         }
                     ],
-                    "partialFingerprints": {
-                        "primaryLocationLineHash": "edd656f04833ae2faea742322f9d057ad94c96e59cb898330bb01a2167654fe8"
-                    }
+                    "ruleId": "UseValueOf"
                 }
             ]
         }

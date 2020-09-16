@@ -238,7 +238,7 @@
                                     "startLine": 3,
                                     "endLine": 8,
                                     "snippet": {
-                                        "text": "public class Test {\n    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path\"; // not allowed"
+                                        "text": "public class Test {\n    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path2\"; // not allowed"
                                     }
                                 }
                             }
@@ -266,25 +266,25 @@
                                     "startLine": 6,
                                     "startColumn": 20,
                                     "endLine": 6,
-                                    "endColumn": 34,
+                                    "endColumn": 35,
                                     "charOffset": 147,
-                                    "charLength": 14,
+                                    "charLength": 15,
                                     "snippet": {
-                                        "text": "\"/sdcard/path\""
+                                        "text": "\"/sdcard/path2\""
                                     }
                                 },
                                 "contextRegion": {
                                     "startLine": 4,
                                     "endLine": 9,
                                     "snippet": {
-                                        "text": "    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path\"; // not allowed\n        String u = \"/sdcard/path\"; // not allowed"
+                                        "text": "    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path2\"; // not allowed\n        String u = \"/sdcard/path3\"; // not allowed"
                                     }
                                 }
                             }
                         }
                     ],
                     "partialFingerprints": {
-                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
+                        "primaryLocationLineHash": "6abfc615234638e7731e0348a2561dd69e8a3db32ec1b021b471a73183d52f95"
                     }
                 },
                 {
@@ -305,25 +305,64 @@
                                     "startLine": 7,
                                     "startColumn": 20,
                                     "endLine": 7,
-                                    "endColumn": 34,
-                                    "charOffset": 197,
-                                    "charLength": 14,
+                                    "endColumn": 35,
+                                    "charOffset": 198,
+                                    "charLength": 15,
                                     "snippet": {
-                                        "text": "\"/sdcard/path\""
+                                        "text": "\"/sdcard/path3\""
                                     }
                                 },
                                 "contextRegion": {
                                     "startLine": 5,
                                     "endLine": 10,
                                     "snippet": {
-                                        "text": "        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path\"; // not allowed\n        String u = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);"
+                                        "text": "        String s = \"/sdcard/path\"; // not allowed\n        String t = \"/sdcard/path2\"; // not allowed\n        String u = \"/sdcard/path3\"; // not allowed\n        String v = \"/sdcard/path4\"; // not allowed"
                                     }
                                 }
                             }
                         }
                     ],
                     "partialFingerprints": {
-                        "primaryLocationLineHash": "ba123dc6591e336992717d14190fbbac5dd823eaa5b914d4f04865f141bc9e22"
+                        "primaryLocationLineHash": "d4a9a367620fa2b2b817791f64833555722b000e7ea0cc19502805384590abf5"
+                    }
+                },
+                {
+                    "ruleId": "SdCardPath",
+                    "ruleIndex": 4,
+                    "message": {
+                        "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
+                        "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 8,
+                                    "startColumn": 20,
+                                    "endLine": 8,
+                                    "endColumn": 35,
+                                    "charOffset": 249,
+                                    "charLength": 15,
+                                    "snippet": {
+                                        "text": "\"/sdcard/path4\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 6,
+                                    "endLine": 11,
+                                    "snippet": {
+                                        "text": "        String t = \"/sdcard/path2\"; // not allowed\n        String u = \"/sdcard/path3\"; // not allowed\n        String v = \"/sdcard/path4\"; // not allowed\n\tInteger i = new Integer(42);"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "60ff2989bf91907351317083263d53445476e4cdffa8cd4b2a6f08afb34f5126"
                     }
                 },
                 {
@@ -542,21 +581,21 @@
                                     "uri": "src/main/java/com/android/tools/demo/Test.java"
                                 },
                                 "region": {
-                                    "startLine": 8,
+                                    "startLine": 9,
                                     "startColumn": 14,
-                                    "endLine": 8,
+                                    "endLine": 9,
                                     "endColumn": 29,
-                                    "charOffset": 241,
+                                    "charOffset": 294,
                                     "charLength": 15,
                                     "snippet": {
                                         "text": "new Integer(42)"
                                     }
                                 },
                                 "contextRegion": {
-                                    "startLine": 6,
-                                    "endLine": 11,
+                                    "startLine": 7,
+                                    "endLine": 12,
                                     "snippet": {
-                                        "text": "        String t = \"/sdcard/path\"; // not allowed\n        String u = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);\n    }"
+                                        "text": "        String u = \"/sdcard/path3\"; // not allowed\n        String v = \"/sdcard/path4\"; // not allowed\n\tInteger i = new Integer(42);\n\tInteger j = new Integer(43);"
                                     }
                                 }
                             }
@@ -576,10 +615,10 @@
                                     "replacements": [
                                         {
                                             "deletedRegion": {
-                                                "startLine": 8,
+                                                "startLine": 9,
                                                 "startColumn": 15,
-                                                "charOffset": 241,
-                                                "endLine": 8,
+                                                "charOffset": 294,
+                                                "endLine": 9,
                                                 "endColumn": 26,
                                                 "charLength": 11
                                             },
@@ -594,6 +633,75 @@
                     ],
                     "partialFingerprints": {
                         "primaryLocationLineHash": "68ab25cd22f760eda046046d2d9d1703fabf754c1678d4603af7cf8d5a8738da"
+                    }
+                },
+                {
+                    "ruleId": "UseValueOf",
+                    "ruleIndex": 5,
+                    "message": {
+                        "text": "Use Integer.valueOf(43) instead",
+                        "markdown": "Use `Integer.valueOf(43)` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 10,
+                                    "startColumn": 14,
+                                    "endLine": 10,
+                                    "endColumn": 29,
+                                    "charOffset": 324,
+                                    "charLength": 15,
+                                    "snippet": {
+                                        "text": "new Integer(43)"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 8,
+                                    "endLine": 13,
+                                    "snippet": {
+                                        "text": "        String v = \"/sdcard/path4\"; // not allowed\n\tInteger i = new Integer(42);\n\tInteger j = new Integer(43);\n    }"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Replace with valueOf()"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 10,
+                                                "startColumn": 15,
+                                                "charOffset": 324,
+                                                "endLine": 10,
+                                                "endColumn": 26,
+                                                "charLength": 11
+                                            },
+                                            "insertedContent": {
+                                                "text": "Integer.valueOf\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "primaryLocationLineHash": "edd656f04833ae2faea742322f9d057ad94c96e59cb898330bb01a2167654fe8"
                     }
                 }
             ]

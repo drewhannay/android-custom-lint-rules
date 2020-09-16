@@ -118,6 +118,169 @@
             },
             "results": [
                 {
+                    "ruleId": "OldTargetApi",
+                    "ruleIndex": 2,
+                    "message": {
+                        "text": "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "android-studio-4/library/build.gradle"
+                                },
+                                "region": {
+                                    "startLine": 7,
+                                    "startColumn": 26,
+                                    "endLine": 7,
+                                    "endColumn": 28,
+                                    "charOffset": 142,
+                                    "charLength": 2,
+                                    "snippet": {
+                                        "text": "29"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 5,
+                                    "endLine": 10,
+                                    "snippet": {
+                                        "text": "    defaultConfig {\n        minSdkVersion 15\n        targetSdkVersion 29\n    }"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Update targetSdkVersion to 30"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "build.gradle"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 7,
+                                                "startColumn": 27,
+                                                "charOffset": 142,
+                                                "endLine": 7,
+                                                "endColumn": 1,
+                                                "charLength": 2
+                                            },
+                                            "insertedContent": {
+                                                "text": "30\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                    },
+                {
+                    "ruleId": "SdCardPath",
+                    "ruleIndex": 3,
+                    "message": {
+                        "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
+                        "markdown": "Do not hardcode \"/sdcard/\"; use `Environment.getExternalStorageDirectory().getPath()` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 5,
+                                    "startColumn": 20,
+                                    "endLine": 5,
+                                    "endColumn": 34,
+                                    "charOffset": 97,
+                                    "charLength": 14,
+                                    "snippet": {
+                                        "text": "\"/sdcard/path\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 3,
+                                    "endLine": 8,
+                                    "snippet": {
+                                        "text": "public class Test {\n    public void test() {\n        String s = \"/sdcard/path\"; // not allowed\n\tInteger i = new Integer(42);"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MissingTranslation",
+                    "ruleIndex": 1,
+                    "message": {
+                        "text": "\"my_string2\" is not new message translated in \"nb\" (Norwegian Bokmål)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/res/values/strings.xml"
+                                },
+                                "region": {
+                                    "startLine": 3,
+                                    "startColumn": 13,
+                                    "endLine": 3,
+                                    "endColumn": 30,
+                                    "charOffset": 72,
+                                    "charLength": 17,
+                                    "snippet": {
+                                        "text": "name=\"my_string2\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 1,
+                                    "endLine": 6,
+                                    "snippet": {
+                                        "text": "<resources>\n    <string name=\"my_string\">My String</string>\n    <string name=\"my_string2\">My String2</string>\n</resources>"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Mark non-translatable"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "src/main/res/values/strings.xml"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 3,
+                                                "startColumn": 31,
+                                                "charOffset": 89
+                                            },
+                                            "insertedContent": {
+                                                "text": " translatable=\"false\"\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "ruleId": "ExtraTranslation",
                     "ruleIndex": 0,
                     "message": {

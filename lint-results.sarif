@@ -142,6 +142,7 @@
             },
             "results": [
                 {
+                    "ruleId": "OldTargetApi",
                     "ruleIndex": 3,
                     "message": {
                         "text": "Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
@@ -204,9 +205,12 @@
                             ]
                         }
                     ],
-                    "ruleId": "OldTargetApi"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "a6596680a2a6f042"
+                    }
                 },
                 {
+                    "ruleId": "SdCardPath",
                     "ruleIndex": 4,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
@@ -240,9 +244,12 @@
                             }
                         }
                     ],
-                    "ruleId": "SdCardPath"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "cd98c7d9da9ce2f6"
+                    }
                 },
                 {
+                    "ruleId": "SdCardPath",
                     "ruleIndex": 4,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
@@ -276,9 +283,12 @@
                             }
                         }
                     ],
-                    "ruleId": "SdCardPath"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "596372887d2b3fef"
+                    }
                 },
                 {
+                    "ruleId": "SdCardPath",
                     "ruleIndex": 4,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
@@ -312,9 +322,12 @@
                             }
                         }
                     ],
-                    "ruleId": "SdCardPath"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "bd6969b6f5454adc"
+                    }
                 },
                 {
+                    "ruleId": "SdCardPath",
                     "ruleIndex": 4,
                     "message": {
                         "text": "Do not hardcode \"/sdcard/\"; use Environment.getExternalStorageDirectory().getPath() instead",
@@ -348,9 +361,12 @@
                             }
                         }
                     ],
-                    "ruleId": "SdCardPath"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "df599c64bb238ee1"
+                    }
                 },
                 {
+                    "ruleId": "MinSdkTooLow",
                     "ruleIndex": 1,
                     "message": {
                         "text": "The value of minSdkVersion is too low. It can be incremented without noticeably reducing the number of supported devices."
@@ -413,9 +429,12 @@
                             ]
                         }
                     ],
-                    "ruleId": "MinSdkTooLow"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "9bbfa38d306eaf34"
+                    }
                 },
                 {
+                    "ruleId": "MissingTranslation",
                     "ruleIndex": 2,
                     "message": {
                         "text": "\"my_string2\" is not translated in \"nb\" (Norwegian Bokmål)"
@@ -475,9 +494,12 @@
                             ]
                         }
                     ],
-                    "ruleId": "MissingTranslation"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "3afe0201c83edf52"
+                    }
                 },
                 {
+                    "ruleId": "ExtraTranslation",
                     "ruleIndex": 0,
                     "message": {
                         "text": "\"my_string3\" is translated here but not found in default locale"
@@ -504,7 +526,7 @@
                                     "startLine": 1,
                                     "endLine": 6,
                                     "snippet": {
-                                        "text": "<resources>\n    <string name=\"my_string\">My String</string>\n    <string name=\"my_string3\">My String 3</string>\n</resources>"
+                                        "text": "<resources>\n    <string name=\"my_string\">My String</string>\n    <string name=\"my_string3\">My String 3</string>\n    <string name=\"extra\">Extra</string>"
                                     }
                                 }
                             }
@@ -540,9 +562,80 @@
                             ]
                         }
                     ],
-                    "ruleId": "ExtraTranslation"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "e5abdc0d96209e12"
+                    }
                 },
                 {
+                    "ruleId": "ExtraTranslation",
+                    "ruleIndex": 0,
+                    "message": {
+                        "text": "\"extra\" is translated here but not found in default locale"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "src/main/res/values-nb/strings.xml"
+                                },
+                                "region": {
+                                    "startLine": 4,
+                                    "startColumn": 13,
+                                    "endLine": 4,
+                                    "endColumn": 25,
+                                    "charOffset": 123,
+                                    "charLength": 12,
+                                    "snippet": {
+                                        "text": "name=\"extra\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 2,
+                                    "endLine": 7,
+                                    "snippet": {
+                                        "text": "    <string name=\"my_string\">My String</string>\n    <string name=\"my_string3\">My String 3</string>\n    <string name=\"extra\">Extra</string>\n</resources>"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Remove translation"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "src/main/res/values-nb/strings.xml"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 4,
+                                                "startColumn": 2,
+                                                "charOffset": 111,
+                                                "endLine": 5,
+                                                "endColumn": 2,
+                                                "charLength": 40
+                                            },
+                                            "insertedContent": {
+                                                "text": "\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "sourceContext/v1": "25f1bf2d60354314"
+                    }
+                },
+                {
+                    "ruleId": "UseValueOf",
                     "ruleIndex": 5,
                     "message": {
                         "text": "Use Integer.valueOf(42) instead",
@@ -606,9 +699,12 @@
                             ]
                         }
                     ],
-                    "ruleId": "UseValueOf"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "d2f4a31ec843a711"
+                    }
                 },
                 {
+                    "ruleId": "UseValueOf",
                     "ruleIndex": 5,
                     "message": {
                         "text": "Use Integer.valueOf(43) instead",
@@ -672,7 +768,9 @@
                             ]
                         }
                     ],
-                    "ruleId": "UseValueOf"
+                    "partialFingerprints": {
+                        "sourceContext/v1": "0048434594d4b6cc"
+                    }
                 }
             ]
         }

@@ -1,4 +1,5 @@
 <resources>
     <string name="my_string">My String</string>
     <string name="my_string3">My String 3</string>
+    <string name="extra">Extra</string>
 </resources>

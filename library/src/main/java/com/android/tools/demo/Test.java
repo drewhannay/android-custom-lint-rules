@@ -8,5 +8,6 @@ public class Test {
         String v = "/sdcard/path4"; // not allowed
 	Integer i = new Integer(42);
 	Integer j = new Integer(43);
+    Integer k = new Integer(44);
     }
 }

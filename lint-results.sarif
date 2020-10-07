@@ -646,7 +646,7 @@
                                     "startLine": 8,
                                     "endLine": 13,
                                     "snippet": {
-                                        "text": "        String v = \"/sdcard/path4\"; // not allowed\n\tInteger i = new Integer(42);\n\tInteger j = new Integer(43);\n    }"
+                                        "text": "        String v = \"/sdcard/path4\"; // not allowed\n\tInteger i = new Integer(42);\n\tInteger j = new Integer(43);\n    Integer k = new Integer(44);"
                                     }
                                 }
                             }
@@ -683,7 +683,145 @@
                         }
                     ],
                     "partialFingerprints": {
-                        "sourceContext/v1": "0048434594d4b6cc"
+                        "sourceContext/v1": "b693c492adc782c8"
+                    }
+                },
+                {
+                    "ruleId": "UseValueOf",
+                    "ruleIndex": 4,
+                    "message": {
+                        "text": "Use Integer.valueOf(44) instead",
+                        "markdown": "Use `Integer.valueOf(44)` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 11,
+                                    "startColumn": 17,
+                                    "endLine": 11,
+                                    "endColumn": 32,
+                                    "charOffset": 357,
+                                    "charLength": 15,
+                                    "snippet": {
+                                        "text": "new Integer(44)"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 9,
+                                    "endLine": 14,
+                                    "snippet": {
+                                        "text": "\tInteger i = new Integer(42);\n\tInteger j = new Integer(43);\n    Integer k = new Integer(44);\n    Integer l = new Integer(44);"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Replace with valueOf()"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "library/src/main/java/com/android/tools/demo/Test.java"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 11,
+                                                "startColumn": 18,
+                                                "charOffset": 357,
+                                                "endLine": 11,
+                                                "endColumn": 29,
+                                                "charLength": 11
+                                            },
+                                            "insertedContent": {
+                                                "text": "Integer.valueOf\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "sourceContext/v1": "2759f8fbbc1e7391"
+                    }
+                },
+                {
+                    "ruleId": "UseValueOf",
+                    "ruleIndex": 4,
+                    "message": {
+                        "text": "Use Integer.valueOf(44) instead",
+                        "markdown": "Use `Integer.valueOf(44)` instead"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "library/src/main/java/com/android/tools/demo/Test.java"
+                                },
+                                "region": {
+                                    "startLine": 12,
+                                    "startColumn": 17,
+                                    "endLine": 12,
+                                    "endColumn": 32,
+                                    "charOffset": 390,
+                                    "charLength": 15,
+                                    "snippet": {
+                                        "text": "new Integer(44)"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 10,
+                                    "endLine": 15,
+                                    "snippet": {
+                                        "text": "\tInteger j = new Integer(43);\n    Integer k = new Integer(44);\n    Integer l = new Integer(44);\n    }"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                        {
+                            "description": {
+                                "text": "Replace with valueOf()"
+                            },
+                            "artifactChanges": [
+                                {
+                                    "artifactLocation": {
+                                        "uriBaseId": "%SRCROOT%",
+                                        "uri": "library/src/main/java/com/android/tools/demo/Test.java"
+                                    },
+                                    "replacements": [
+                                        {
+                                            "deletedRegion": {
+                                                "startLine": 12,
+                                                "startColumn": 18,
+                                                "charOffset": 390,
+                                                "endLine": 12,
+                                                "endColumn": 29,
+                                                "charLength": 11
+                                            },
+                                            "insertedContent": {
+                                                "text": "Integer.valueOf\n"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "partialFingerprints": {
+                        "sourceContext/v1": "2df67eaa07c07a2c"
                     }
                 }
             ]

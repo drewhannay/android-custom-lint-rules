@@ -9,5 +9,6 @@ public class Test {
 	Integer i = new Integer(42);
 	Integer j = new Integer(43);
     Integer k = new Integer(44);
+    Integer l = new Integer(44);
     }
 }
